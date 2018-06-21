@@ -12,11 +12,17 @@ c. Create a stored procedure which drops objects not in the table, or who have m
 #03. Create a production schema. Avoiding overuse of the dbo schema helps bolster security by a small margin, and also helps refocus definitions and increases clarity in regards to schema use.
 
 #04. Create a new production tables for storing customer data:
+
 a. Customer information
+
 b. Contact information Type
+
 c. Contact information
+
 d. Products
+
 e. Customer orders
+
 f. Logging
 
 #05. Create some views on customer information.
