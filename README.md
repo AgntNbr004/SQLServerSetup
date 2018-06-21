@@ -14,15 +14,10 @@ c. Create a stored procedure which drops objects not in the table, or who have m
 #04. Create a new production tables for storing customer data:
 
 a. Customer information
-
 b. Contact information Type
-
 c. Contact information
-
 d. Products
-
 e. Customer orders
-
 f. Logging
 
 #05. Create some views on customer information.
