@@ -1,19 +1,27 @@
-# SQL Server Setup
+# SQL Server Setup:
 This is a series of scripts I wrote up to set up a generic company database.
 The following things will be done in order to set up this new "BrentRockwell" database:
-1. Create a schema for temporary objects. Nothing is worse than a database where you can't tell which objects are supposed to be there and which were created by an analyst and then forgotten about.
-2. Create a process for cleaning the temp schema. One of the major drawbacks to any sandbox is that people leave their toys in it. We will perform the following tasks in order to ensure that this temporary schema environment stays as clean as possible:
-   - Create a table for persisting objects.
-   - Add in some safeguards to ensure that people don't try to circumnavigate the spirit of this schema.
-   - Create a stored procedure which drops objects not in the table, or who have moved past their expiration date.
-3. Create a production schema. Avoiding overuse of the dbo schema helps bolster security by a small margin, and also helps refocus definitions and increases clarity in regards to schema use.
-4. Create a new production tables for storing customer data:
-   - Customer information
-   - Contact information Type
-   - Contact information
-   - Products
-   - Customer orders
-   - Logging
-5. Create some views on customer information.
-6. Run some reports and generate some data on our new data.
-7. Create some jobs to ensure that reports we need regularly are automated.
+1. Create schemas for production and temporary objects. Nothing is worse than a database where you can't tell which objects are supposed to be there and which were created by an analyst or developer and then forgotten about.
+2. Create tables to store the following information:
+   - Customer Information
+   - Customer Addresses
+   - Customer Phone Numbers
+   - Customer Email addresses
+   - Company Products
+   - Customer Orders
+   - ChangeLog
+   - Tables for persisting TEMP objects
+   - Type Lookup Tables
+3. Create indices on the tables for faster joins, filtering, and general querying. This is normally done after initial data is inserted.
+4. Add triggers to store changes / deletes and to perform basic data validation.
+5. Create some basic functions for stripping data and performing string manipulations.
+6. Create a stored procedure for deleting objects from the TEMP schema.
+7. Create views for looking into various data points and reviewing orders, etc.
+8. Load all the tables with junk data so that analysis and testing can be done.
+9. Perform some basic analysis and a pivot.
+10. Create a job for cleaning the TEMP schema nightly.
+11. Several Selects to review all the garbage data inserted.
+
+### Todo:
+These are some action items in order to make some of these scripts better.
+1. Change this from a generic company to a gaming company.
