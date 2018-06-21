@@ -52,12 +52,17 @@ BEGIN
 			WHERE D_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
 		) deleted_XML,
-		(
+		ISNULL((
 			SELECT
 				I_XML.*
 			FROM inserted I_XML WITH (NOLOCK)
 			WHERE I_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
+		),
+			(
+			SELECT 'Record Deleted' RecordStatus_tx
+			FOR XML RAW
+			)
 		) inserted_XML,
 		GETUTCDATE() Change_dt
 	FROM deleted D WITH (NOLOCK)
@@ -96,12 +101,17 @@ BEGIN
 			WHERE D_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
 		) deleted_XML,
-		(
+		ISNULL((
 			SELECT
 				I_XML.*
 			FROM inserted I_XML WITH (NOLOCK)
 			WHERE I_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
+		),
+			(
+			SELECT 'Record Deleted' RecordStatus_tx
+			FOR XML RAW
+			)
 		) inserted_XML,
 		GETUTCDATE() Change_dt
 	FROM deleted D WITH (NOLOCK)
@@ -140,12 +150,17 @@ BEGIN
 			WHERE D_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
 		) deleted_XML,
-		(
+		ISNULL((
 			SELECT
 				I_XML.*
 			FROM inserted I_XML WITH (NOLOCK)
 			WHERE I_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
+		),
+			(
+			SELECT 'Record Deleted' RecordStatus_tx
+			FOR XML RAW
+			)
 		) inserted_XML,
 		GETUTCDATE() Change_dt
 	FROM deleted D WITH (NOLOCK)
@@ -184,12 +199,17 @@ BEGIN
 			WHERE D_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
 		) deleted_XML,
-		(
+		ISNULL((
 			SELECT
 				I_XML.*
 			FROM inserted I_XML WITH (NOLOCK)
 			WHERE I_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
+		),
+			(
+			SELECT 'Record Deleted' RecordStatus_tx
+			FOR XML RAW
+			)
 		) inserted_XML,
 		GETUTCDATE() Change_dt
 	FROM deleted D WITH (NOLOCK)
@@ -228,12 +248,17 @@ BEGIN
 			WHERE D_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
 		) deleted_XML,
-		(
+		ISNULL((
 			SELECT
 				I_XML.*
 			FROM inserted I_XML WITH (NOLOCK)
 			WHERE I_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
+		),
+			(
+			SELECT 'Record Deleted' RecordStatus_tx
+			FOR XML RAW
+			)
 		) inserted_XML,
 		GETUTCDATE() Change_dt
 	FROM deleted D WITH (NOLOCK)
@@ -272,12 +297,17 @@ BEGIN
 			WHERE D_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
 		) deleted_XML,
-		(
+		ISNULL((
 			SELECT
 				I_XML.*
 			FROM inserted I_XML WITH (NOLOCK)
 			WHERE I_XML.[Key_id] = D.[Key_id]
 			FOR XML RAW
+		),
+			(
+			SELECT 'Record Deleted' RecordStatus_tx
+			FOR XML RAW
+			)
 		) inserted_XML,
 		GETUTCDATE() Change_dt
 	FROM deleted D WITH (NOLOCK)
